@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\controllers\TestController;
+use App\Http\controllers\ContactFormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,8 +21,12 @@ Route::get('/', function () {
 
 Route::get('tests/test', 'App\Http\Controllers\TestController@index');
 
+Route::group(['prefix' => 'contact', 'middleware' => 'auth'], function() {
+	Route::get('index', 'App\Http\Controllers\ContactFormController@index')->name('contact.index');
+});
+
 // REST
-Route::resource('contacts', 'App\Http\Controllers\ContactFormController');
+// Route::rosource('contacts', 'ContactFormController');
 
 Auth::routes();
 
