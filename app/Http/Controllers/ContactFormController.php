@@ -146,7 +146,7 @@ class ContactFormController extends Controller
 	
 				$contact->save();
 	
-				return redirect('contact/index');	
+				return redirect('contact/index');
     }
 
     /**
@@ -158,5 +158,9 @@ class ContactFormController extends Controller
     public function destroy($id)
     {
         //
+				$contact = ContactForm::find($id);
+				$contact->delete();
+
+				return redirect('contact/index');
     }
 }
