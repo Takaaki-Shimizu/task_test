@@ -165,6 +165,10 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+      'password' => 'パスワード',
+			'email' => 'メールアドレス',
+			'caution' => '注意事項'
+    ],
 
 ];
