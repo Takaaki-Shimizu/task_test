@@ -25,6 +25,7 @@ Route::group(['prefix' => 'contact', 'middleware' => 'auth'], function() {
 	Route::get('index', 'App\Http\Controllers\ContactFormController@index')->name('contact.index');
 	Route::get('create', 'App\Http\Controllers\ContactFormController@create')->name('contact.create');
 	Route::post('store', 'App\Http\Controllers\ContactFormController@store')->name('contact.store');
+	Route::get('show/{id}', 'App\Http\Controllers\ContactFormController@show')->name('contact.show');
 });
 
 // REST
