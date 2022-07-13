@@ -14,7 +14,7 @@
                         </div>
                     @endif
 										{{ __('editです') }}
-										<form method="GET" action="">
+										<form method="POST" action="{{ route('contact.update', ['id' => $contact->id ]) }}">
 											@csrf
 
 											氏名
