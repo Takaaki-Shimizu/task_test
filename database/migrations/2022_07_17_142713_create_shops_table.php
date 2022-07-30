@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('shop_name', 20);
             $table->unsignedBigInteger('area_id');
             $table->timestamps();
+
+            $table->foreign('area_id')->references('id')->on('areas');
         });
     }
 
